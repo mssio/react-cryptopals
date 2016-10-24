@@ -37,7 +37,7 @@ class C1Step1Page extends React.Component {
       <div>
         <h1>Challenge 1 Step 1</h1>
         <p>Are you ready?</p>
-        <p>Look at <a href="https://cryptopals.com/sets/1/challenges/1">this page</a> to see the challenge.</p>
+        <p>Look at <a href="https://cryptopals.com/sets/1/challenges/1" target="_blank">this page</a> to see the challenge.</p>
         <div>
           <Form onSubmit={this.calculate}>
             <Form.Field>
@@ -52,15 +52,15 @@ class C1Step1Page extends React.Component {
               label="Bytes Array"
               placeholder="Bytes Array"
               value={this.state.bytesArr.toString()}
-              disabled="disabled"
+              readOnly
             />
             <Form.Field>
               <label>ASCII Translated</label>
-              <input placeholder="ASCII Translated" value={this.state.asciiRead} disabled="disabled" />
+              <input placeholder="ASCII Translated" value={this.state.asciiRead} readOnly />
             </Form.Field>
             <Form.Field>
               <label>Base64 Encoded</label>
-              <input placeholder="Bytes Array" value={this.state.base64Encoded} disabled="disabled" />
+              <input placeholder="Bytes Array" value={this.state.base64Encoded} readOnly />
             </Form.Field>
 
             <Button primary type="submit">Calculate</Button>
