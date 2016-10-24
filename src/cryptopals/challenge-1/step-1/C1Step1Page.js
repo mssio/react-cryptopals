@@ -19,7 +19,7 @@ class C1Step1Page extends React.Component {
   calculate = (evt) => {
     const inputStr = this.refs.input.value;
     const bytesArr = this.getBytesArray(inputStr);
-    const asciiRead = this.getAsciiRead(bytesArr);
+    const asciiRead = HelpingHand.hex2bin(inputStr);
     const base64Encoded = this.getBase64Encoded(asciiRead);
 
     this.setState({
@@ -44,23 +44,35 @@ class C1Step1Page extends React.Component {
               <label>Input Hexadecimal</label>
               <input
                 ref="input"
+                name="input"
                 placeholder="Hexadecimal"
                 defaultValue={this.state.inputStr}
               />
             </Form.Field>
             <Form.TextArea
               label="Bytes Array"
+              name="bytes"
               placeholder="Bytes Array"
               value={this.state.bytesArr.toString()}
               readOnly
             />
             <Form.Field>
               <label>ASCII Translated</label>
-              <input placeholder="ASCII Translated" value={this.state.asciiRead} readOnly />
+              <input
+                name="ascii"
+                placeholder="ASCII Translated"
+                value={this.state.asciiRead}
+                readOnly
+              />
             </Form.Field>
             <Form.Field>
               <label>Base64 Encoded</label>
-              <input placeholder="Bytes Array" value={this.state.base64Encoded} readOnly />
+              <input
+                name="input"
+                placeholder="Bytes Array"
+                value={this.state.base64Encoded}
+                readOnly
+              />
             </Form.Field>
 
             <Button primary type="submit">Calculate</Button>

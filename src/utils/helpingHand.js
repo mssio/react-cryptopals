@@ -8,6 +8,15 @@ export default class HelpingHand {
 
     return bytes;
   }
+  static bytes2hex (input) {
+    let hex = '';
+
+    input.map(function (value) {
+      hex += value.toString(16);
+    });
+
+    return hex;
+  }
   static bytes2char (input) {
     let str = String.fromCharCode.apply(String, input);
 
@@ -22,5 +31,22 @@ export default class HelpingHand {
   // Based on same function on php
   static hex2bin (input) {
     return this.bytes2char(this.hex2bytes(input));
+  }
+
+  static hex_binops (input1, input2, ops) {
+    input1 = this.hex2bytes(input1);
+    input2 = this.hex2bytes(input2);
+
+    if (input1.length !== input2.length) {
+      return false;
+    } else {
+      let result = [];
+
+      for (let i = 0; i < input1.length; i++) {
+        result.push( eval("input1[i] "+ ops +" input2[i]") );
+      }
+
+      return this.bytes2hex(result);
+    }
   }
 }
