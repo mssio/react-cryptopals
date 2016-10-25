@@ -8,6 +8,7 @@ import ComingSoonPage from './components/ComingSoonPage';
 
 import C1Step1Page from './cryptopals/challenge-1/step-1/C1Step1Page';
 import C1Step2Page from './cryptopals/challenge-1/step-2/C1Step2Page';
+import C1Step3Page from './cryptopals/challenge-1/step-3/C1Step3Page';
 
 export default (
   <Route path="/" component={App}>
@@ -16,5 +17,6 @@ export default (
     <Route path="coming-soon" component={ComingSoonPage}/>
     <Route path="challenge/1/step/1" component={C1Step1Page}/>
     <Route path="challenge/1/step/2" component={C1Step2Page}/>
+    <Route path="challenge/1/step/3" component={C1Step3Page}/>
   </Route>
 );
